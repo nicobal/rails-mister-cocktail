@@ -1,0 +1,48 @@
+<% content_for(:title) do %>
+<%= @cocktail.name %> is on Mister Cocktail
+<% end %>
+<div class="container" style="padding-top: 16px">
+
+<h1><%= @cocktail.name %></h1>
+
+</div>
+
+
+<div class="container">
+<div class="row">
+
+<% @cocktail.doses.each do |d| %>
+<div class="col-xs-12 col-sm-3">
+ <%= render "cardose", dose: d %>
+</div>
+<% end %>
+
+
+</div>
+
+
+</div>
+
+
+<div >
+
+<%= simple_form_for [@cocktail, @dose] do |d| %>
+  <div class="search-form-control form-group">
+  <%= d.association :ingredient %>
+
+  </div>
+  <div class="search-form-control form-group">
+
+  <%= d.input :description %>
+  </div>
+  <%= d.button :submit, class: "btn btn-gradient" %>
+<% end %>
+
+</div>
+
+
+<div style="padding-top: 16px">
+
+<%= link_to "All cocktails", cocktails_path, class: "btn btn-flat" %>
+
+</div>

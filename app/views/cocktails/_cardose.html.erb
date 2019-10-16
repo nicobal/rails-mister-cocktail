@@ -1,0 +1,13 @@
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+      <h2><%= dose.ingredient.name %></h2>
+      <p><%= dose.description %></p>
+      <p>
+      <%= link_to "Delete", cocktail_dose_path(@cocktail, dose),
+      method: :delete,
+      data: { confirm: "Are you sure?" }, class: "btn btn-ghost btn-sm" %>
+
+      </p>
+  </div>
+</div>
